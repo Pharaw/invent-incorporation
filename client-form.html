@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Service Request Form - Invent Incorporated</title>
+    <link rel="stylesheet" href="style-red.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+            min-height: 100vh;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+        }
+        
+        h1 {
+            color: #dc143c;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid #dc143c;
+            background: #fff5f5;
+        }
+        
+        .form-section h3 {
+            color: #dc143c;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #dc143c;
+            box-shadow: 0 0 5px rgba(220, 20, 60, 0.3);
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+        
+        .checkbox-item label {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background: #dc143c;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #8b0000;
+        }
+        
+        .required {
+            color: #dc143c;
+        }
+        
+        .form-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 600px) {
+            .form-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Client Service Request Form</h1>
+        <p class="form-intro">Please fill out this form to request our insurance and bonding services. We'll contact you within 24 hours.</p>
+        
+        <form id="clientForm" action="mailto:info@inventincorporated.com" method="post" enctype="text/plain">
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Physical Address</label>
+                    <input type="text" id="address" name="address" placeholder="Street, City, Province">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company/Organization Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+            </div>
+            
+            <!-- Service Selection -->
+            <div class="form-section">
+                <h3>Select Services You're Interested In</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="motor" name="services" value="Motor Insurance">
+                        <label for="motor">Motor Insurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="liability" name="services" value="Liability Insurance">
+                        <label for="liability">Liability Insurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="agriculture" name="services" value="Agriculture Insurance">
+                        <label for="agriculture">Agriculture Insurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="commercial" name="services" value="Commercial Insurance">
+                        <label for="commercial">Commercial Insurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="marine" name="services" value="Marine Insurance">
+                        <label for="marine">Marine Insurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="travel" name="services" value="Travel Insurance">
+                        <label for="travel">Travel Insurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="construction" name="services" value="Construction & Engineering">
+                        <label for="construction">Construction & Engineering</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="bonds" name="services" value="Trade Credit, Bonds & Guarantees">
+                        <label for="bonds">Trade Credit, Bonds & Guarantees</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="life" name="services" value="Life Assurance">
+                        <label for="life">Life Assurance</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="funeral" name="services" value="Funeral Assurance">
+                        <label for="funeral">Funeral Assurance</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bond/Guarantee Details (if applicable) -->
+            <div class="form-section">
+                <h3>Bond/Guarantee Details (if applicable)</h3>
+                <div class="form-group">
+                    <label for="bondType">Type of Bond/Guarantee</label>
+                    <select id="bondType" name="bondType">
+                        <option value="">Select type...</option>
+                        <option value="Performance Bond">Performance Bond</option>
+                        <option value="Bid Bond">Bid Bond</option>
+                        <option value="Advance Payment Bond">Advance Payment Bond</option>
+                        <option value="Customs Bond">Customs Bond</option>
+                        <option value="Retention Bond">Retention Bond</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bondAmount">Bond Amount</label>
+                    <input type="text" id="bondAmount" name="bondAmount" placeholder="e.g., ZAR 500,000">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectDetails">Project/Contract Details</label>
+                    <textarea id="projectDetails" name="projectDetails" placeholder="Brief description of the project or contract..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Insurance Details -->
+            <div class="form-section">
+                <h3>Insurance Requirements</h3>
+                <div class="form-group">
+                    <label for="coverageAmount">Desired Coverage Amount</label>
+                    <input type="text" id="coverageAmount" name="coverageAmount" placeholder="e.g., ZAR 1,000,000">
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentInsurer">Current Insurer (if any)</label>
+                    <input type="text" id="currentInsurer" name="currentInsurer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="renewalDate">Policy Renewal Date (if applicable)</label>
+                    <input type="date" id="renewalDate" name="renewalDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information</label>
+                    <textarea id="additionalInfo" name="additionalInfo" placeholder="Any specific requirements, claims history, or other details..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Preferred Contact -->
+            <div class="form-section">
+                <h3>Preferred Contact Method</h3>
+                <div class="form-group">
+                    <select id="contactMethod" name="contactMethod" required>
+                        <option value="">Select preferred method...</option>
+                        <option value="Email">Email</option>
+                        <option value="Phone">Phone</option>
+                        <option value="In-person meeting">In-person meeting</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bestTime">Best Time to Contact</label>
+                    <input type="text" id="bestTime" name="bestTime" placeholder="e.g., Weekdays 9am-5pm">
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+    </div>
+
+    <script>
+        // Form validation
+        document.getElementById('clientForm').addEventListener('submit', function(e) {
+            const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+            if (checkboxes.length === 0) {
+                alert('Please select at least one service you\'re interested in.');
+                e.preventDefault();
+                return false;
+            }
+            return true;
+        });
+    </script>
+</body>
+</html>

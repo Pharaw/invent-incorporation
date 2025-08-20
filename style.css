@@ -1,0 +1,274 @@
+/* Default body style, will be overridden per page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Remove background image from body for cover section */
+body.home-page {
+    background: none;
+    box-shadow: none;
+}
+.cover-section {
+    background-image: url('home.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.cover-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 61, 98, 0.4);
+    z-index: 1;
+}
+.cover-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+.cover-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    background: linear-gradient(90deg, #079992 30%, #0a3d62 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cover-content p {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+/* Services page background */
+body.services-page {
+    background-image: url('page 2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 220px 60px rgba(7,153,146,0.32);
+}
+
+/* About page background */
+body.about-page {
+    background-image: url('about.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+body.about-page::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(10,61,98,0.85) 0%, rgba(7,153,146,0.75) 100%);
+    z-index: -1;
+}
+
+body.about-page::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -2;
+}
+
+/* Navigation styles */
+nav {
+    width: 100%;
+    background: rgba(10,61,98,0.95);
+    padding: 0;
+    margin: 0 0 30px 0;
+    box-shadow: 0 2px 8px #eee;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0;
+}
+nav ul li a {
+    display: block;
+    padding: 18px 40px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+nav ul li a:hover, nav ul li a.active {
+    background: #079992;
+    color: #fff;
+}
+
+/* Enhanced background overlay for all pages - reduced opacity for better image visibility */
+body.home-page::before,
+body.services-page::before,
+body.about-page::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(7,153,146,0.25) 0%, rgba(10,61,98,0.30) 100%);
+    z-index: -1;
+    pointer-events: none;
+    /* Reduced vignette for better image visibility */
+    box-shadow: inset 0 0 120px 30px rgba(10,61,98,0.15);
+}
+
+/* Reduced blur for background image to make it more visible */
+body.home-page::after,
+body.services-page::after,
+body.about-page::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    backdrop-filter: blur(0.5px);
+    z-index: -2;
+    pointer-events: none;
+    background: rgba(20, 40, 60, 0.08);
+}
+
+/* Content container styles - more spacing and softer background */
+header, section {
+    max-width: 950px;
+    margin: 36px auto 36px auto;
+    background: rgba(255,255,255,0.92);
+    padding: 38px 38px 32px 38px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(7,153,146,0.10), 0 1.5px 8px 0 rgba(10,61,98,0.08);
+    transition: box-shadow 0.2s;
+}
+h1, h2, h3 {
+    color: #0a3d62;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #079992 30%, #0a3d62 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+ul {
+    margin: 0 0 24px 0;
+    padding-left: 24px;
+    font-size: 1.08em;
+    line-height: 1.7;
+}
+.personnel {
+    margin-bottom: 28px;
+    background: rgba(10,61,98,0.06);
+    border-radius: 8px;
+    padding: 18px 22px;
+    box-shadow: 0 1px 6px 0 rgba(7,153,146,0.06);
+}
+.contact {
+    margin-bottom: 10px;
+    color: #079992;
+    font-weight: 500;
+}
+.values, .services, .actuarial, .why, .references {
+    margin-bottom: 30px;
+}
+.footer {
+    text-align: center;
+    color: #fff;
+    margin: 48px 0 0 0;
+    background: rgba(10,61,98,0.85);
+    padding: 18px 0 18px 0;
+    border-radius: 0 0 12px 12px;
+    font-size: 1.04em;
+    letter-spacing: 1px;
+}
+.highlight {
+    color: #079992;
+    font-weight: bold;
+    background: rgba(7,153,146,0.08);
+    padding: 2px 7px;
+    border-radius: 5px;
+}
+.brand-highlight {
+    color: #079992;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 2.1em;
+}
+.intro-list {
+    list-style: disc inside;
+    margin: 22px 0 0 0;
+    padding: 0;
+    color: #fff;
+    background: rgba(10,61,98,0.74);
+    border-radius: 10px;
+    padding: 18px 28px;
+    font-size: 1.08em;
+    box-shadow: 0 1px 8px 0 rgba(7,153,146,0.09);
+}
+.section-visual {
+    margin: 20px 0 28px 0;
+    padding: 22px 28px;
+    background: rgba(7,153,146,0.12);
+    border-left: 6px solid #079992;
+    color: #0a3d62;
+    font-size: 1.13em;
+    border-radius: 8px;
+}
+.vision-text, .mission-text {
+    color: #079992;
+    font-weight: bold;
+    font-size: 1.13em;
+    letter-spacing: 0.5px;
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 22px 0 0 0;
+}
+.values-grid div {
+    background: linear-gradient(90deg, rgba(7,153,146,0.13) 0%, rgba(10,61,98,0.10) 100%);
+    padding: 18px 22px;
+    border-radius: 10px;
+    color: #0a3d62;
+    font-weight: 500;
+    box-shadow: 0 1px 6px 0 rgba(7,153,146,0.07);
+}
+.promise-list {
+    list-style: square inside;
+    margin: 18px 0 0 0;
+    padding: 0;
+    color: #0a3d62;
+    font-size: 1.05em;
+    background: rgba(7,153,146,0.07);
+    border-radius: 8px;
+    padding: 16px 22px;
+    margin-bottom: 0;
+}
+.why-list {
+    list-style: disc inside;
+    margin: 18px 0 0 0;
+    padding: 0;
+    color: #0a3d62;
+    font-size: 1.05em;
+}

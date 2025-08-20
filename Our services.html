@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services - Invent Incorporated</title>
+    <link rel="stylesheet" href="style-red.css">
+    <script src="animated-background.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: url('page 2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--dark-gray);
+        }
+        header, section {
+            max-width: 950px;
+            margin: 36px auto 36px auto;
+            background: var(--white);
+            padding: 38px 38px 32px 38px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(220, 20, 60, 0.10), 0 1.5px 8px 0 rgba(220, 20, 60, 0.08);
+            transition: box-shadow 0.2s;
+        }
+        h1, h2, h3 { 
+            color: var(--primary-red);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            background: linear-gradient(90deg, var(--primary-red) 30%, var(--dark-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .footer { 
+            text-align: center;
+            color: var(--white);
+            margin: 48px 0 0 0;
+            background: var(--dark-red);
+            padding: 18px 0 18px 0;
+            border-radius: 0 0 12px 12px;
+            font-size: 1.04em;
+            letter-spacing: 1px;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--white);
+        }
+        .services-page {
+            background: url('page 2.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        /* Service grid for visual appeal */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 28px;
+            margin: 32px 0 0 0;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: 0 2px 16px 0 rgba(220, 20, 60, 0.13);
+            padding: 28px 22px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.18s, box-shadow 0.18s;
+            border-left: 6px solid var(--primary-red);
+        }
+        .service-card:hover {
+            transform: translateY(-6px) scale(1.025);
+            box-shadow: 0 6px 32px 0 rgba(220, 20, 60, 0.18);
+            background: rgba(255,255,255,0.98);
+        }
+        .service-icon {
+            font-size: 2.1em;
+            margin-bottom: 12px;
+            color: var(--primary-red);
+        }
+        .service-title {
+            font-size: 1.18em;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 8px;
+        }
+        .service-desc {
+            color: var(--dark-gray);
+            font-size: 1.04em;
+            line-height: 1.6;
+        }
+        /* Section background for extra pop */
+        .services-section-bg {
+            background: linear-gradient(120deg, rgba(220, 20, 60, 0.13) 0%, rgba(178, 34, 34, 0.10) 100%);
+            border-radius: 22px;
+            padding: 32px 18px 38px 18px;
+            margin-bottom: 36px;
+            box-shadow: 0 2px 24px 0 rgba(220, 20, 60, 0.09);
+        }
+        /* Enhanced background overlay with red tones */
+        body.services-page::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(120deg, rgba(220, 20, 60, 0.25) 0%, rgba(178, 34, 34, 0.30) 100%);
+            z-index: -1;
+            pointer-events: none;
+            box-shadow: inset 0 0 120px 30px rgba(220, 20, 60, 0.15);
+        }
+        @media (max-width: 700px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="services-page">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Our services.html" class="active">Our Services</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1><span class="brand-highlight">Our Services</span></h1>
+        <div class="section-visual">
+            <span class="vision-text">
+                Discover a full spectrum of insurance and risk solutions, designed to protect what matters most to you and your business.
+            </span>
+        </div>
+    </header>
+    <section class="services-section-bg">
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🚗</span>
+                <div class="service-title">Motor Insurance</div>
+                <div class="service-desc">
+                    Comprehensive and third-party cover for your vehicles—protecting you from accidents, theft, fire, and liability on and off the road.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🛡️</span>
+                <div class="service-title">Liability Insurance</div>
+                <div class="service-desc">
+                    Safeguard your business or personal assets from legal claims due to injury or property damage to others.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🌾</span>
+                <div class="service-title">Agriculture Insurance</div>
+                <div class="service-desc">
+                    Tailored protection for crops, livestock, and equipment—covering risks like drought, fire, pests, and disease.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🏢</span>
+                <div class="service-title">Commercial Insurance</div>
+                <div class="service-desc">
+                    All-in-one solutions for businesses: property, stock, equipment, and business interruption cover to keep you running strong.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🚢</span>
+                <div class="service-title">Marine Insurance</div>
+                <div class="service-desc">
+                    Secure your goods in transit—by sea, air, or land—against loss or damage during shipping and logistics.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">✈️</span>
+                <div class="service-title">Travel Insurance</div>
+                <div class="service-desc">
+                    Enjoy peace of mind on every journey with cover for medical emergencies, trip cancellations, lost baggage, and more.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🏗️</span>
+                <div class="service-title">Construction & Engineering</div>
+                <div class="service-desc">
+                    Risk solutions for your projects: contractor’s all risks, plant and machinery, and erection all risks insurance.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">💼</span>
+                <div class="service-title">Trade Credit, Bonds & Guarantees</div>
+                <div class="service-desc">
+                    Protect your cash flow with trade credit insurance and secure contracts with performance, bid, and advance payment bonds.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">❤️</span>
+                <div class="service-title">Life Assurance</div>
+                <div class="service-desc">
+                    Financial security for your loved ones—choose from whole life, term life, and endowment policies with savings options.
+                </div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">⚰️</span>
+                <div class="service-title">Funeral Assurance</div>
+                <div class="service-desc">
+                    Affordable plans to cover funeral expenses, ensuring dignity and support for your family when it matters most.
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        &copy; 2025 Invent Incorporated. All rights reserved.
+    </div>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="client-form.html" style="background: #dc143c; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 18px; display: inline-block;">Request a Quote</a>
+    </div>
+</body>
+</html>
